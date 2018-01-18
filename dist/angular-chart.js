@@ -145,7 +145,7 @@
               destroyChart(scope);
               return;
             }
-            var chartType = type || scope.chartType;
+            var chartType = scope.chartType || type;
             if (! chartType) return;
 
             if (scope.chart && canUpdateChart(newVal, oldVal))
@@ -157,7 +157,7 @@
           function watchOther (newVal, oldVal) {
             if (isEmpty(newVal)) return;
             if (angular.equals(newVal, oldVal)) return;
-            var chartType = type || scope.chartType;
+            var chartType = scope.chartType || type;
             if (! chartType) return;
 
             // chart.update() doesn't work for series and labels
